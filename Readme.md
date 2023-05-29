@@ -16,7 +16,7 @@ The package offers various features and functionalities, such as:
 
 By utilizing the "express-session" package, developers can easily implement session management and leverage session data within their Express.js applications, enhancing the user experience and providing personalized functionality.
 
-
+Using express-session, you have access to all the session data in the request object and can be used like normal javascript objects.
 
 
 

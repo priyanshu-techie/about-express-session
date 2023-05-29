@@ -7,10 +7,13 @@ const MongoStore = require('connect-mongo');
 
 // session middleware setup
 const sessionConfig = {
-    secret: 'your-secret-key',
+    secret: 'your-secret-key', // this should be in the env file (not exposed).
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create( { mongoUrl:'mongodb://localhost:27017/session-data'})
+    store: MongoStore.create( { mongoUrl:'mongodb://localhost:27017/session-data'}),
+    cookie:{
+        maxAge:1000*60*60*24 // means 24 hours 
+    }
 }
 
 app.use(session(sessionConfig));

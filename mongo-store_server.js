@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express();
 const session = require('express-session');
-const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo'); 
 
 
@@ -12,7 +11,8 @@ const sessionConfig = {
     saveUninitialized: true,
     store: MongoStore.create( { mongoUrl:'mongodb://localhost:27017/session-data'}),
     cookie:{
-        maxAge:1000*60*60*24 // means 24 hours 
+        maxAge:1000*60*60*24*365 // means 1 year 
+        // this current session data will last for one year
     }
 }
 

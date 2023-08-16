@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
 const session = require('express-session');
-const MongoStore = require('connect-mongo'); 
+const MongoStore = require('connect-mongo');
 
 
 // session middleware setup
@@ -38,7 +38,7 @@ app.get('/login', (req, res) => {
 app.get('/profile', (req, res) => {
     // Access session data
     const username = req.session.username;
-    const count= req.session.count?req.session.count:1;
+    const count= req.session.count?++req.session.count:1;
     res.send(`Welcome, ${username}!`);
 });
 

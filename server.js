@@ -10,8 +10,8 @@ const sessionConfig = {
 }
 
 app.use(session(sessionConfig));
-// first time when you visit the page you get a set-cookie method in the response.
-// and then every time you make a request to the server the brwser will send the cookie along whci the express-server will check
+// first time when you visit the page you get a set-cookie method in the response object.
+// and then every time you make a request to the server the brwser will send the cookie with the request object and along whci the express-server will check
 
 app.get('/', (req, res) => {
     res.send("welcome to the home page");
